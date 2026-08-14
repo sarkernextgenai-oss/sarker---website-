@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarker NextGenAI Technology Inc. | Building Intelligent Solutions for the Future</title>
+  <meta name="description" content="Sarker NextGenAI Technology Inc. delivers cutting-edge AI agents, automation, custom software, and digital transformation solutions for startups, SMBs, enterprises, and governments worldwide." />
+  <meta name="keywords" content="AI agents, AI chatbots, workflow automation, custom AI development, digital transformation, e-commerce automation, Manila AI company, Philippines AI" />
+  <meta name="author" content="Sarker NextGenAI Technology Inc." />
+  <meta property="og:title" content="Sarker NextGenAI Technology Inc. | Building Intelligent Solutions for the Future" />
+  <meta property="og:description" content="We build AI-powered systems that automate workflows, grow businesses, and redefine what's possible." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sarkernextgenai.com" />
+  <meta property="og:image" content="https://sarkernextgenai.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sarker NextGenAI Technology Inc." />
+  <meta name="twitter:description" content="Building Intelligent Solutions for the Future" />
+  <link rel="canonical" href="https://sarkernextgenai.com" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sarker NextGenAI Technology Inc.",
+    "url": "https://sarkernextgenai.com",
+    "logo": "https://sarkernextgenai.com/logo.png",
+    "description": "AI automation, custom software, and digital transformation company",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Metro Manila",
+      "addressCountry": "PH"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/sarkernextgenai",
+      "https://twitter.com/sarkernextgenai"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-light: #3B82F6;
+      --primary-dark: #1D4ED8;
+      --secondary: #7C3AED;
+      --secondary-light: #8B5CF6;
+      --accent: #06B6D4;
+      --accent-light: #22D3EE;
+      --bg: #050816;
+      --bg-2: #0a0f1e;
+      --surface: #111827;
+      --surface-2: #1a2235;
+      --surface-3: #1f2d42;
+      --border: rgba(255,255,255,0.08);
+      --border-light: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --text-secondary: rgba(255,255,255,0.65);
+      --text-muted: rgba(255,255,255,0.4);
+      --gradient-primary: linear-gradient(135deg, #2563EB, #7C3AED);
+      --gradient-accent: linear-gradient(135deg, #06B6D4, #2563EB);
+      --gradient-full: linear-gradient(135deg, #06B6D4, #2563EB, #7C3AED);
+      --glow-primary: 0 0 40px rgba(37,99,235,0.3);
+      --glow-secondary: 0 0 40px rgba(124,58,237,0.3);
+      --glow-accent: 0 0 40px rgba(6,182,212,0.3);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+    button { cursor: pointer; border: none; outline: none; font-family: inherit; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+    /* ===== LOADING SCREEN ===== */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 20px;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-logo {
+      font-family: 'Manrope', sans-serif;
+      font-size: 24px; font-weight: 800;
+      background: var(--gradient-full);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .loader-bar {
+      width: 200px; height: 2px;
+      background: var(--surface);
+      border-radius: 2px; overflow: hidden;
+    }
+    .loader-progress {
+      height: 100%;
+      background: var(--gradient-full);
+      border-radius: 2px;
+      animation: load 1.5s ease-out forwards;
+    }
+    @keyframes load { from { width: 0; } to { width: 100%; } }
+
+    /* ===== COOKIE CONSENT ===== */
+    #cookie {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      z-index: 1000;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 16px;
+      max-width: 640px; width: calc(100% - 40px);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      animation: slideUp 0.4s ease;
+    }
+    #cookie.hidden { display: none; }
+    @keyframes slideUp { from { opacity:0; transform:translateX(-50%) translateY(20px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+    #cookie p { font-size: 13px; color: var(--text-secondary); flex: 1; }
+    #cookie-accept {
+      background: var(--gradient-primary);
+      color: white; border-radius: 8px;
+      padding: 8px 18px; font-size: 13px; font-weight: 600;
+      white-space: nowrap;
+    }
+    #cookie-close {
+      background: transparent; color: var(--text-muted);
+      font-size: 18px; line-height: 1; padding: 4px;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    #back-top {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 44px; height: 44px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 18px;
+      opacity: 0; transform: translateY(20px);
+      transition: all 0.3s;
+      box-shadow: var(--glow-primary);
+    }
+    #back-top.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      padding: 0 40px;
+      height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(5,8,22,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom-color: var(--border);
+    }
+    .nav-logo {
+      font-family: 'Manrope', sans-serif;
+      font-size: 20px; font-weight: 800;
+      background: var(--gradient-full);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+    }
+    .nav-logo span { font-weight: 400; opacity: 0.7; }
+    .nav-links {
+      display: flex; align-items: center; gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 7px 14px;
+      font-size: 14px; font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: 8px;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover { color: white; background: rgba(255,255,255,0.06); }
+    .nav-links .has-mega { position: relative; }
+    .mega-menu {
+      position: absolute; top: calc(100% + 12px); left: 50%;
+      transform: translateX(-50%);
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 8px;
+      min-width: 540px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: all 0.2s;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      backdrop-filter: blur(20px);
+    }
+    .has-mega:hover .mega-menu { opacity: 1; visibility: visible; pointer-events: all; }
+    .mega-item {
+      padding: 12px;
+      border-radius: 10px;
+      transition: background 0.2s;
+      display: flex; gap: 12px;
+    }
+    .mega-item:hover { background: rgba(255,255,255,0.05); }
+    .mega-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 8px;
+      background: rgba(37,99,235,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .mega-item h4 { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+    .mega-item p { font-size: 12px; color: var(--text-muted); }
+    .nav-cta {
+      background: var(--gradient-primary);
+      color: white !important;
+      padding: 9px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      box-shadow: 0 0 20px rgba(37,99,235,0.3);
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(37,99,235,0.4) !important; background: rgba(255,255,255,0.1) !important; }
+    .nav-mobile-btn {
+      display: none;
+      background: transparent; color: white;
+      font-size: 24px; padding: 4px;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 800;
+      background: rgba(5,8,22,0.97);
+      backdrop-filter: blur(20px);
+      padding: 90px 30px 30px;
+      flex-direction: column; gap: 8px;
+      overflow-y: auto;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 14px 16px;
+      font-size: 16px; font-weight: 500;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .mobile-menu a:hover { background: var(--surface); border-color: var(--primary); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 120px 40px 80px;
+    }
+    .hero-canvas {
+      position: absolute; inset: 0;
+      pointer-events: none;
+    }
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: orb-float 8s ease-in-out infinite;
+    }
+    .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%); top: -100px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%); bottom: -50px; right: -100px; animation-delay: -3s; }
+    .orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); animation-delay: -6s; }
+    @keyframes orb-float {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center;
+      max-width: 900px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid rgba(37,99,235,0.4);
+      border-radius: 100px;
+      font-size: 13px; font-weight: 500;
+      color: var(--accent-light);
+      background: rgba(6,182,212,0.08);
+      margin-bottom: 28px;
+      animation: fade-up 0.6s ease both;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+    .hero h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(44px, 7vw, 84px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+      animation: fade-up 0.6s 0.1s ease both;
+    }
+    .hero h1 .gradient-text {
+      background: var(--gradient-full);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: var(--text-secondary);
+      max-width: 620px; margin: 0 auto 40px;
+      line-height: 1.7;
+      animation: fade-up 0.6s 0.2s ease both;
+    }
+    .hero-actions {
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap;
+      animation: fade-up 0.6s 0.3s ease both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px;
+      background: var(--gradient-primary);
+      color: white; font-size: 15px; font-weight: 600;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(37,99,235,0.35);
+      transition: all 0.3s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,99,235,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: white; font-size: 15px; font-weight: 600;
+      border-radius: 10px;
+      transition: all 0.3s; backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; align-items: center; justify-content: center; gap: 48px;
+      margin-top: 64px;
+      animation: fade-up 0.6s 0.4s ease both;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .num {
+      font-family: 'Manrope', sans-serif;
+      font-size: 36px; font-weight: 800;
+      background: var(--gradient-full);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-stat .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+    .hero-divider { width: 1px; height: 40px; background: var(--border-light); }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 100px 40px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-label::before, .section-label::after {
+      content: ''; width: 24px; height: 1px; background: currentColor;
+    }
+    h2.section-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .section-sub {
+      font-size: 18px; color: var(--text-secondary); line-height: 1.7;
+      max-width: 560px;
+    }
+    .section-header { margin-bottom: 64px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== TRUSTED BY ===== */
+    .trusted { padding: 40px 40px 60px; overflow: hidden; }
+    .trusted-label {
+      text-align: center; font-size: 13px; color: var(--text-muted);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 32px;
+    }
+    .logo-track {
+      display: flex; gap: 60px; align-items: center;
+      animation: scroll 25s linear infinite;
+      width: max-content;
+    }
+    .logo-track:hover { animation-play-state: paused; }
+    .logo-wrap { overflow: hidden; mask-image: linear-gradient(90deg,transparent,black 15%,black 85%,transparent); }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .trusted-logo {
+      display: flex; align-items: center; gap: 8px;
+      opacity: 0.35; filter: grayscale(1);
+      transition: all 0.3s; white-space: nowrap;
+      font-size: 15px; font-weight: 700; letter-spacing: -0.5px;
+      color: white;
+    }
+    .trusted-logo:hover { opacity: 0.7; filter: grayscale(0); }
+    .trusted-logo .logo-icon {
+      width: 28px; height: 28px;
+      background: var(--gradient-primary);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 900; color: white;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-card-main {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      position: relative; overflow: hidden;
+    }
+    .about-card-main::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gradient-full);
+    }
+    .about-float-cards {
+      position: absolute;
+      display: flex; flex-direction: column; gap: 12px;
+      right: -60px; top: 50%; transform: translateY(-50%);
+    }
+    .float-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 12px; font-weight: 600;
+      width: 140px;
+      display: flex; align-items: center; gap: 8px;
+      animation: float 4s ease-in-out infinite;
+    }
+    .float-card:nth-child(2) { animation-delay: -2s; }
+    .float-card .fc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .tag {
+      padding: 6px 14px;
+      background: rgba(37,99,235,0.1);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 100px;
+      font-size: 12px; font-weight: 600;
+      color: var(--primary-light);
+    }
+    .about-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px; }
+    .metric-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .metric-num {
+      font-family: 'Manrope', sans-serif;
+      font-size: 32px; font-weight: 800;
+      background: var(--gradient-full);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .metric-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    /* ===== SERVICES ===== */
+    .services-bg { background: var(--bg-2); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 24px; }
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative; overflow: hidden;
+      transition: all 0.3s;
+      cursor: default;
+    }
+    .service-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--gradient-primary);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .service-card:hover { transform: translateY(-6px); border-color: rgba(37,99,235,0.4); box-shadow: 0 20px 60px rgba(37,99,235,0.15); }
+    .service-card:hover::before { opacity: 0.04; }
+    .service-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      position: relative; z-index: 1;
+    }
+    .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; position: relative; z-index: 1; }
+    .service-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; position: relative; z-index: 1; }
+    .service-arrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--primary-light);
+      margin-top: 20px; position: relative; z-index: 1;
+      transition: gap 0.2s;
+    }
+    .service-card:hover .service-arrow { gap: 10px; }
+
+    /* ===== AI SOLUTIONS ===== */
+    .ai-solutions { position: relative; overflow: hidden; }
+    .ai-bg-orb {
+      position: absolute; width: 800px; height: 800px;
+      border-radius: 50%; filter: blur(120px);
+      background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+    .ai-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
+    .ai-features { display: flex; flex-direction: column; gap: 16px; }
+    .ai-feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex; gap: 20px; align-items: start;
+      transition: all 0.3s; cursor: default;
+    }
+    .ai-feature:hover { border-color: rgba(124,58,237,0.4); background: var(--surface-2); }
+    .ai-feature-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(124,58,237,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .ai-feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .ai-feature p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .ai-demo {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      position: sticky; top: 90px;
+    }
+    .ai-demo-header {
+      display: flex; align-items: center; gap: 8px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .ai-demo-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .ai-demo-title { font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-left: auto; }
+    .chat-messages { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .chat-msg {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 13px; line-height: 1.6;
+      max-width: 85%;
+    }
+    .chat-msg.bot {
+      background: rgba(37,99,235,0.1);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+    }
+    .chat-msg.user {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-bottom-right-radius: 4px;
+      align-self: flex-end;
+    }
+    .chat-input-bar {
+      display: flex; gap: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 10px 14px;
+      align-items: center;
+    }
+    .chat-input-bar input {
+      flex: 1; background: transparent; border: none;
+      color: var(--text); font-size: 13px; outline: none;
+      font-family: inherit;
+    }
+    .chat-input-bar input::placeholder { color: var(--text-muted); }
+    .chat-send {
+      width: 32px; height: 32px;
+      background: var(--gradient-primary);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: white;
+    }
+
+    /* ===== INDUSTRIES ===== */
+    .industries-bg { background: var(--bg-2); }
+    .industries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 20px; }
+    .industry-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.3s; cursor: default;
+    }
+    .industry-card:hover { transform: translateY(-4px); border-color: rgba(6,182,212,0.4); }
+    .industry-icon { font-size: 36px; margin-bottom: 14px; }
+    .industry-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .industry-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ===== WHY CHOOSE US ===== */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; }
+    .why-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative; overflow: hidden;
+    }
+    .why-number {
+      font-family: 'Manrope', sans-serif;
+      font-size: 72px; font-weight: 900;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      opacity: 0.15;
+      position: absolute; top: -10px; right: 20px;
+      line-height: 1; pointer-events: none;
+    }
+    .why-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .why-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+    /* ===== PROCESS ===== */
+    .process-bg { background: var(--bg-2); }
+    .process-steps { display: flex; gap: 0; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute;
+      top: 32px; left: 40px; right: 40px; height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+    .process-step {
+      flex: 1; padding: 20px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      gap: 16px;
+    }
+    .step-circle {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Manrope', sans-serif;
+      font-size: 20px; font-weight: 800; color: white;
+      position: relative; z-index: 1;
+      box-shadow: 0 0 30px rgba(37,99,235,0.4);
+    }
+    .step-circle.alt { background: var(--gradient-accent); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
+    .process-step h3 { font-size: 16px; font-weight: 700; }
+    .process-step p { font-size: 13px; color: var(--text-secondary); }
+
+    /* ===== TECH STACK ===== */
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); gap: 16px; }
+    .tech-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .tech-item:hover { border-color: rgba(37,99,235,0.4); transform: translateY(-3px); }
+    .tech-logo { font-size: 28px; margin-bottom: 8px; }
+    .tech-name { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+
+    /* ===== PORTFOLIO / CASE STUDIES ===== */
+    .portfolio-bg { background: var(--bg-2); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 28px; }
+    .portfolio-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    .portfolio-thumb {
+      height: 200px;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .portfolio-thumb .thumb-label {
+      font-family: 'Manrope', sans-serif;
+      font-size: 48px; font-weight: 900; opacity: 0.15;
+      color: white;
+    }
+    .portfolio-body { padding: 24px; }
+    .portfolio-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(37,99,235,0.12);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 100px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .portfolio-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .portfolio-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .portfolio-metrics {
+      display: flex; gap: 20px; margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .pm { text-align: center; }
+    .pm-num {
+      font-family: 'Manrope', sans-serif;
+      font-size: 22px; font-weight: 800;
+      background: var(--gradient-full);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .pm-label { font-size: 11px; color: var(--text-muted); }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 24px; }
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"'; position: absolute; top: 16px; right: 24px;
+      font-size: 80px; font-weight: 900; line-height: 1;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      opacity: 0.2;
+    }
+    .testimonial-stars { color: #FBBF24; font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
+    .testimonial-card blockquote {
+      font-size: 15px; line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; }
+    .author-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800; color: white;
+      flex-shrink: 0;
+    }
+    .author-name { font-size: 14px; font-weight: 700; }
+    .author-title { font-size: 12px; color: var(--text-muted); }
+
+    /* ===== PRICING ===== */
+    .pricing-bg { background: var(--bg-2); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 24px; align-items: start; }
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      position: relative; overflow: hidden;
+      transition: all 0.3s;
+    }
+    .pricing-card.featured {
+      border-color: rgba(37,99,235,0.5);
+      background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(124,58,237,0.08));
+    }
+    .pricing-card.featured::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+    }
+    .popular-badge {
+      position: absolute; top: 20px; right: 20px;
+      background: var(--gradient-primary);
+      color: white; font-size: 11px; font-weight: 700;
+      padding: 4px 12px; border-radius: 100px;
+      letter-spacing: 0.5px;
+    }
+    .pricing-name { font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .pricing-price {
+      font-family: 'Manrope', sans-serif;
+      font-size: 48px; font-weight: 900;
+      line-height: 1;
+      background: var(--gradient-full);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .pricing-period { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
+    .pricing-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); line-height: 1.6; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .pricing-features li { font-size: 14px; display: flex; align-items: start; gap: 10px; }
+    .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .pricing-cta {
+      display: block; width: 100%; text-align: center;
+      padding: 13px; border-radius: 10px;
+      font-size: 15px; font-weight: 700;
+      transition: all 0.3s;
+    }
+    .pricing-cta.outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+    }
+    .pricing-cta.outline:hover { border-color: var(--primary); color: var(--primary-light); }
+    .pricing-cta.filled {
+      background: var(--gradient-primary);
+      color: white;
+      box-shadow: 0 8px 30px rgba(37,99,235,0.3);
+    }
+    .pricing-cta.filled:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,99,235,0.5); }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .faq-item.open { border-color: rgba(37,99,235,0.4); }
+    .faq-q {
+      width: 100%; background: none; color: var(--text);
+      font-size: 16px; font-weight: 600;
+      padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; text-align: left;
+      cursor: pointer; transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--primary-light); }
+    .faq-icon {
+      width: 24px; height: 24px; flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(37,99,235,0.2); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+      padding: 0 24px;
+    }
+    .faq-a.open { max-height: 300px; padding: 0 24px 20px; }
+    .faq-a p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+    /* ===== CONTACT CTA ===== */
+    .cta-section {
+      padding: 80px 40px;
+      position: relative; overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(124,58,237,0.15) 50%, rgba(6,182,212,0.1) 100%);
+    }
+    .cta-content {
+      position: relative; z-index: 1;
+      text-align: center;
+      max-width: 700px; margin: 0 auto;
+    }
+    .cta-content h2 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800; letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+    .cta-content p { font-size: 18px; color: var(--text-secondary); margin-bottom: 36px; }
+    .cta-form {
+      display: flex; gap: 12px; max-width: 460px; margin: 0 auto;
+    }
+    .cta-input {
+      flex: 1; padding: 14px 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px; color: white;
+      font-size: 15px; font-family: inherit;
+      outline: none; transition: border-color 0.2s;
+    }
+    .cta-input::placeholder { color: var(--text-muted); }
+    .cta-input:focus { border-color: var(--primary); }
+
+    /* ===== CONTACT PAGE ===== */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item {
+      display: flex; gap: 16px; align-items: start;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+    .contact-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(37,99,235,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .contact-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .contact-item p { font-size: 13px; color: var(--text-secondary); }
+    .contact-form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+    .form-input, .form-select, .form-textarea {
+      padding: 12px 16px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text); font-size: 14px; font-family: inherit;
+      outline: none; transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--primary); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+    .form-select { cursor: pointer; }
+    .form-select option { background: var(--surface); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      width: 100%; padding: 14px;
+      background: var(--gradient-primary);
+      color: white; font-size: 15px; font-weight: 700;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(37,99,235,0.3);
+      transition: all 0.3s;
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,99,235,0.5); }
+
+    /* ===== BLOG ===== */
+    .blog-bg { background: var(--bg-2); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 28px; }
+    .blog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: all 0.3s; cursor: pointer;
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .blog-thumb {
+      height: 180px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+      position: relative; overflow: hidden;
+    }
+    .blog-body { padding: 24px; }
+    .blog-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .blog-tag {
+      padding: 4px 10px;
+      background: rgba(37,99,235,0.1);
+      border-radius: 100px;
+      font-size: 11px; font-weight: 700; color: var(--primary-light);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .blog-date { font-size: 12px; color: var(--text-muted); }
+    .blog-card h3 { font-size: 17px; font-weight: 700; line-height: 1.4; margin-bottom: 10px; }
+    .blog-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .blog-card .blog-read { font-size: 13px; color: var(--primary-light); font-weight: 600; margin-top: 16px; display: flex; align-items: center; gap: 6px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 64px 40px 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {}
+    .footer-logo {
+      font-family: 'Manrope', sans-serif;
+      font-size: 20px; font-weight: 800;
+      background: var(--gradient-full);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .footer-desc {
+      font-size: 14px; color: var(--text-muted); line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .social-links { display: flex; gap: 10px; }
+    .social-link {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; transition: all 0.2s;
+    }
+    .social-link:hover { background: var(--primary); border-color: var(--primary); }
+    .footer-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 13px; color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--primary-light); }
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom p { font-size: 13px; color: var(--text-muted); }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { font-size: 13px; color: var(--text-muted); transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: white; }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-top: 20px;
+    }
+    .newsletter h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .newsletter p { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+    .newsletter-form { display: flex; gap: 8px; }
+    .newsletter-input {
+      flex: 1; padding: 9px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px; color: white;
+      font-size: 13px; font-family: inherit; outline: none;
+    }
+    .newsletter-btn {
+      padding: 9px 16px;
+      background: var(--gradient-primary);
+      color: white; font-size: 13px; font-weight: 700;
+      border-radius: 8px;
+    }
+
+    /* ===== CAREERS ===== */
+    .careers-bg { background: var(--bg-2); }
+    .job-list { display: flex; flex-direction: column; gap: 16px; max-width: 860px; margin: 0 auto; }
+    .job-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      transition: all 0.3s;
+    }
+    .job-card:hover { border-color: rgba(37,99,235,0.4); }
+    .job-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .job-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+    .job-badge {
+      padding: 3px 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 11px; color: var(--text-secondary); font-weight: 500;
+    }
+    .job-apply {
+      padding: 9px 20px;
+      background: transparent;
+      border: 1px solid var(--border-light);
+      border-radius: 8px; color: white;
+      font-size: 13px; font-weight: 600;
+      white-space: nowrap; flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .job-apply:hover { border-color: var(--primary); color: var(--primary-light); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: flex; }
+      section { padding: 70px 20px; }
+      .hero { padding: 100px 20px 60px; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-float-cards { display: none; }
+      .ai-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .process-steps { flex-direction: column; }
+      .process-steps::before { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 48px 20px 24px; }
+      .cta-form { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-divider { display: none; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* ===== GRADIENT BACKGROUNDS FOR CARDS ===== */
+    .grad-blue { background: linear-gradient(135deg, rgba(37,99,235,0.2), rgba(59,130,246,0.1)); }
+    .grad-purple { background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(139,92,246,0.1)); }
+    .grad-cyan { background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(34,211,238,0.1)); }
+    .grad-mixed { background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(124,58,237,0.15)); }
+
+    /* ===== SECTION ID ANCHORS ===== */
+    #home, #about, #services, #ai-solutions, #industries, #why-us, #process, #tech-stack, #portfolio, #testimonials, #pricing, #faq, #contact, #blog, #careers { scroll-margin-top: 80px; }
+  </style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-logo">Sarker NextGenAI</div>
+  <div class="loader-bar"><div class="loader-progress"></div></div>
+</div>
+
+<!-- Cookie Consent -->
+<div id="cookie">
+  <p>We use cookies to enhance your experience. By continuing, you agree to our <a href="#privacy" style="color:var(--primary-light);">Privacy Policy</a>.</p>
+  <button id="cookie-accept" onclick="document.getElementById('cookie').classList.add('hidden')">Accept</button>
+  <button id="cookie-close" onclick="document.getElementById('cookie').classList.add('hidden')">✕</button>
+</div>
+
+<!-- Back to Top -->
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#home" class="nav-logo">Sarker <span>NextGenAI</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li class="has-mega">
+      <a href="#services">Services ▾</a>
+      <div class="mega-menu">
+        <a href="#services" class="mega-item">
+          <div class="mega-icon">🤖</div>
+          <div><h4>AI Agents</h4><p>Autonomous AI workers</p></div>
+        </a>
+        <a href="#services" class="mega-item">
+          <div class="mega-icon">💬</div>
+          <div><h4>AI Chatbots</h4><p>24/7 intelligent support</p></div>
+        </a>
+        <a href="#services" class="mega-item">
+          <div class="mega-icon">⚡</div>
+          <div><h4>Automation</h4><p>Workflow optimization</p></div>
+        </a>
+        <a href="#services" class="mega-item">
+          <div class="mega-icon">🌐</div>
+          <div><h4>Web Development</h4><p>Premium digital products</p></div>
+        </a>
+        <a href="#services" class="mega-item">
+          <div class="mega-icon">📱</div>
+          <div><h4>Mobile Apps</h4><p>iOS & Android solutions</p></div>
+        </a>
+        <a href="#services" class="mega-item">
+          <div class="mega-icon">☁️</div>
+          <div><h4>Cloud Solutions</h4><p>Scalable infrastructure</p></div>
+        </a>
+      </div>
+    </li>
+    <li><a href="#ai-solutions">AI Solutions</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#careers">Careers</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started →</a></li>
+  </ul>
+  <button class="nav-mobile-btn" id="mobile-toggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+  <a href="#home" onclick="closeMobile()">🏠 Home</a>
+  <a href="#about" onclick="closeMobile()">👥 About</a>
+  <a href="#services" onclick="closeMobile()">⚡ Services</a>
+  <a href="#ai-solutions" onclick="closeMobile()">🤖 AI Solutions</a>
+  <a href="#industries" onclick="closeMobile()">🏭 Industries</a>
+  <a href="#portfolio" onclick="closeMobile()">📁 Portfolio</a>
+  <a href="#pricing" onclick="closeMobile()">💰 Pricing</a>
+  <a href="#blog" onclick="closeMobile()">📝 Blog</a>
+  <a href="#careers" onclick="closeMobile()">💼 Careers</a>
+  <a href="#faq" onclick="closeMobile()">❓ FAQ</a>
+  <a href="#contact" onclick="closeMobile()" style="background:var(--gradient-primary);border-color:transparent;">🚀 Get Started →</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-canvas" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+    <canvas id="particles-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge" role="status">
+      <span class="dot"></span>
+      Now serving 50+ businesses across Southeast Asia
+    </div>
+    <h1>
+      We Build AI That<br/>
+      <span class="gradient-text">Transforms Businesses</span>
+    </h1>
+    <p class="hero-sub">
+      From intelligent automation to custom AI agents, Sarker NextGenAI Technology Inc. engineers the systems that give your business an unfair advantage.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        Start Your Project <span>→</span>
+      </a>
+      <a href="#portfolio" class="btn-secondary">
+        View Our Work <span>↗</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num" data-count="50">0</div>
+        <div class="label">Projects Delivered</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="num" data-count="30">0</div>
+        <div class="label">Happy Clients</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="num" data-count="5">0</div>
+        <div class="label">Years of Excellence</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="num" data-count="98">0</div>
+        <div class="label">% Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUSTED BY ===== -->
+<section class="trusted">
+  <div class="container">
+    <p class="trusted-label">Trusted by businesses across Southeast Asia &amp; beyond</p>
+    <div class="logo-wrap">
+      <div class="logo-track">
+        <div class="trusted-logo"><div class="logo-icon">A</div>AcmeTech Corp</div>
+        <div class="trusted-logo"><div class="logo-icon">V</div>VentureHub PH</div>
+        <div class="trusted-logo"><div class="logo-icon">N</div>NexaCommerce</div>
+        <div class="trusted-logo"><div class="logo-icon">B</div>BuildSmart Inc.</div>
+        <div class="trusted-logo"><div class="logo-icon">G</div>GrowthForge</div>
+        <div class="trusted-logo"><div class="logo-icon">S</div>SwiftEcom</div>
+        <div class="trusted-logo"><div class="logo-icon">P</div>PinoyBrands</div>
+        <div class="trusted-logo"><div class="logo-icon">D</div>DataFirst PH</div>
+        <div class="trusted-logo"><div class="logo-icon">R</div>RapidScale</div>
+        <div class="trusted-logo"><div class="logo-icon">A</div>AcmeTech Corp</div>
+        <div class="trusted-logo"><div class="logo-icon">V</div>VentureHub PH</div>
+        <div class="trusted-logo"><div class="logo-icon">N</div>NexaCommerce</div>
+        <div class="trusted-logo"><div class="logo-icon">B</div>BuildSmart Inc.</div>
+        <div class="trusted-logo"><div class="logo-icon">G</div>GrowthForge</div>
+        <div class="trusted-logo"><div class="logo-icon">S</div>SwiftEcom</div>
+        <div class="trusted-logo"><div class="logo-icon">P</div>PinoyBrands</div>
+        <div class="trusted-logo"><div class="logo-icon">D</div>DataFirst PH</div>
+        <div class="trusted-logo"><div class="logo-icon">R</div>RapidScale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-card-main">
+          <div style="font-size:14px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;">AI Mission Control</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:var(--surface-2);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(37,99,235,0.2);display:flex;align-items:center;justify-content:center;font-size:16px;">🤖</div>
+              <div style="flex:1;">
+                <div style="font-size:13px;font-weight:600;margin-bottom:2px;">AI Agents Active</div>
+                <div style="font-size:12px;color:var(--text-muted);">12 workflows running</div>
+              </div>
+              <div style="font-size:12px;font-weight:700;color:#22C55E;">● Live</div>
+            </div>
+            <div style="background:var(--surface-2);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(124,58,237,0.2);display:flex;align-items:center;justify-content:center;font-size:16px;">⚡</div>
+              <div style="flex:1;">
+                <div style="font-size:13px;font-weight:600;margin-bottom:2px;">Tasks Automated Today</div>
+                <div style="font-size:12px;color:var(--text-muted);">2,847 tasks processed</div>
+              </div>
+              <div style="font-size:12px;font-weight:700;color:var(--accent);">+24%</div>
+            </div>
+            <div style="background:var(--surface-2);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(6,182,212,0.2);display:flex;align-items:center;justify-content:center;font-size:16px;">📈</div>
+              <div style="flex:1;">
+                <div style="font-size:13px;font-weight:600;margin-bottom:2px;">Revenue Generated</div>
+                <div style="font-size:12px;color:var(--text-muted);">for clients this month</div>
+              </div>
+              <div style="font-size:12px;font-weight:700;color:#22C55E;">$1.2M+</div>
+            </div>
+          </div>
+          <div class="about-tags">
+            <span class="tag">OpenAI</span>
+            <span class="tag">Claude AI</span>
+            <span class="tag">n8n</span>
+            <span class="tag">Make.com</span>
+            <span class="tag">Shopify</span>
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+          </div>
+        </div>
+        <div class="about-float-cards" aria-hidden="true">
+          <div class="float-card"><div class="fc-dot"></div>50+ Projects Done</div>
+          <div class="float-card" style="animation-delay:-1s"><div class="fc-dot" style="background:var(--secondary)"></div>5 Years Expert</div>
+          <div class="float-card" style="animation-delay:-3s"><div class="fc-dot" style="background:#22C55E"></div>98% Satisfaction</div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="section-label" aria-label="Section">About Us</div>
+        <h2 class="section-title">Where Intelligence Meets Innovation</h2>
+        <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">
+          Sarker NextGenAI Technology Inc. is a full-service AI and software development agency headquartered in Metro Manila, Philippines. We build intelligent systems that transform how businesses operate — from AI agents that work 24/7 to full-scale digital platforms.
+        </p>
+        <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:32px;">
+          Our team combines deep expertise in artificial intelligence, software engineering, and digital marketing to deliver solutions that don't just automate tasks — they generate measurable business growth.
+        </p>
+        <a href="#contact" class="btn-primary" style="display:inline-flex;">Work With Us →</a>
+        <div class="about-metrics">
+          <div class="metric-card reveal reveal-delay-1">
+            <div class="metric-num">50+</div>
+            <div class="metric-label">Projects Delivered</div>
+          </div>
+          <div class="metric-card reveal reveal-delay-2">
+            <div class="metric-num">10+</div>
+            <div class="metric-label">Industries Served</div>
+          </div>
+          <div class="metric-card reveal reveal-delay-3">
+            <div class="metric-num">5★</div>
+            <div class="metric-label">Average Rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services-bg" id="services">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">What We Build</div>
+      <h2 class="section-title">End-to-End AI &amp; Tech Services</h2>
+      <p class="section-sub">From intelligent automation to full-stack development, we handle the complete technology stack your business needs to scale.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon" style="background:rgba(37,99,235,0.15);">🤖</div>
+        <h3>AI Agents</h3>
+        <p>Deploy autonomous AI workers that handle complex multi-step tasks, research, outreach, and decision-making — without human intervention.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon" style="background:rgba(124,58,237,0.15);">💬</div>
+        <h3>AI Chatbots</h3>
+        <p>Intelligent conversational AI trained on your data — for customer support, lead qualification, e-commerce assistance, and internal helpdesks.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon" style="background:rgba(6,182,212,0.15);">🧠</div>
+        <h3>Custom AI Development</h3>
+        <p>Bespoke AI models, fine-tuned LLMs, computer vision systems, and NLP pipelines tailored precisely to your industry and use case.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" style="background:rgba(37,99,235,0.15);">🌐</div>
+        <h3>Website Development</h3>
+        <p>High-performance web apps, e-commerce platforms, SaaS dashboards, and marketing sites built with React, Next.js, and modern tech stacks.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon" style="background:rgba(124,58,237,0.15);">📱</div>
+        <h3>Mobile App Development</h3>
+        <p>Cross-platform iOS and Android applications with AI-powered features, real-time sync, and beautiful native experiences.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon" style="background:rgba(6,182,212,0.15);">🏗️</div>
+        <h3>SaaS Development</h3>
+        <p>Scalable multi-tenant SaaS platforms with subscription billing, user management, analytics dashboards, and AI integrations baked in.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" style="background:rgba(37,99,235,0.15);">📊</div>
+        <h3>ERP &amp; CRM Development</h3>
+        <p>Custom enterprise resource planning and customer relationship management systems that unify your operations and data in one intelligent platform.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon" style="background:rgba(124,58,237,0.15);">⚡</div>
+        <h3>Workflow Automation</h3>
+        <p>Using n8n, Make.com, and Zapier, we automate repetitive operations across your entire tech stack — saving hundreds of hours monthly.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon" style="background:rgba(6,182,212,0.15);">🔌</div>
+        <h3>API Integration</h3>
+        <p>Connect and orchestrate any combination of third-party services, payment gateways, marketplaces, and internal systems through robust APIs.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon" style="background:rgba(37,99,235,0.15);">☁️</div>
+        <h3>Cloud Solutions</h3>
+        <p>AWS, GCP, and Azure architecture design, deployment, and DevOps — engineered for reliability, security, and infinite scalability.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon" style="background:rgba(124,58,237,0.15);">📉</div>
+        <h3>Data Analytics</h3>
+        <p>Business intelligence dashboards, predictive analytics, and machine learning pipelines that transform raw data into revenue-driving insights.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon" style="background:rgba(6,182,212,0.15);">🎨</div>
+        <h3>UI/UX Design</h3>
+        <p>Research-driven, pixel-perfect design systems and prototypes that convert visitors into customers — with accessibility and performance first.</p>
+        <div class="service-arrow">Learn more <span>→</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI SOLUTIONS ===== -->
+<section class="ai-solutions" id="ai-solutions">
+  <div class="ai-bg-orb" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">AI-Powered</div>
+      <h2 class="section-title">Intelligent Solutions<br/>That Actually Work</h2>
+      <p class="section-sub">We don't just integrate AI — we architect intelligent systems that solve real business problems and deliver measurable results.</p>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-features">
+        <div class="ai-feature reveal">
+          <div class="ai-feature-icon">🧠</div>
+          <div>
+            <h3>Large Language Model Integration</h3>
+            <p>We integrate GPT-4, Claude, Gemini, and open-source models into your products — with custom fine-tuning, RAG pipelines, and enterprise-grade reliability.</p>
+          </div>
+        </div>
+        <div class="ai-feature reveal reveal-delay-1">
+          <div class="ai-feature-icon">🔄</div>
+          <div>
+            <h3>Intelligent Process Automation</h3>
+            <p>AI that understands context, makes decisions, and executes multi-step workflows — from lead nurturing to invoice processing and beyond.</p>
+          </div>
+        </div>
+        <div class="ai-feature reveal reveal-delay-2">
+          <div class="ai-feature-icon">👁️</div>
+          <div>
+            <h3>Computer Vision Systems</h3>
+            <p>Image recognition, object detection, OCR, and video analysis pipelines for quality control, security, retail analytics, and document processing.</p>
+          </div>
+        </div>
+        <div class="ai-feature reveal reveal-delay-3">
+          <div class="ai-feature-icon">📊</div>
+          <div>
+            <h3>Predictive Analytics</h3>
+            <p>Machine learning models that forecast demand, detect anomalies, score leads, and surface insights your business would otherwise miss.</p>
+          </div>
+        </div>
+        <div class="ai-feature reveal">
+          <div class="ai-feature-icon">🌐</div>
+          <div>
+            <h3>Multi-Language AI (Bangla + English)</h3>
+            <p>AI systems optimized for Southeast Asian markets — including Bangla, Filipino, and English, enabling truly local intelligent experiences.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ai-demo reveal reveal-delay-2">
+        <div class="ai-demo-header">
+          <div class="ai-demo-dot" style="background:#FF5F56;"></div>
+          <div class="ai-demo-dot" style="background:#FFBD2E;margin-left:4px;"></div>
+          <div class="ai-demo-dot" style="background:#27C93F;margin-left:4px;"></div>
+          <div class="ai-demo-title">Sarker AI Assistant</div>
+        </div>
+        <div class="chat-messages" id="chat-display">
+          <div class="chat-msg bot">👋 Hi! I'm your Sarker AI assistant. I can help you automate workflows, answer questions, and grow your business. What can I do for you today?</div>
+          <div class="chat-msg user">Can you help me automate my e-commerce order processing?</div>
+          <div class="chat-msg bot">Absolutely! I can set up an end-to-end automation that: ✅ Captures orders from Shopee/Lazada/TikTok Shop ✅ Sends instant confirmation emails ✅ Updates your inventory in real time ✅ Notifies your team on Slack. Want me to start building this workflow?</div>
+        </div>
+        <div class="chat-input-bar">
+          <input type="text" id="demo-input" placeholder="Ask the AI anything..." />
+          <button class="chat-send" id="demo-send" onclick="sendDemoMsg()">↑</button>
+        </div>
+        <div style="text-align:center;margin-top:16px;">
+          <span style="font-size:11px;color:var(--text-muted);">Powered by Sarker NextGenAI • Claude + GPT-4 Integration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="industries-bg" id="industries">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Industries We Transform</h2>
+      <p class="section-sub">We bring deep domain knowledge to every engagement — not just generic technology.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card reveal">
+        <div class="industry-icon">🛒</div>
+        <h3>E-Commerce</h3>
+        <p>Shopee, Lazada, TikTok Shop automation, AI product recommendations, and revenue optimization systems.</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-1">
+        <div class="industry-icon">🏦</div>
+        <h3>Finance &amp; Banking</h3>
+        <p>Fraud detection, loan processing automation, AI financial advisors, and regulatory compliance tools.</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-2">
+        <div class="industry-icon">🏥</div>
+        <h3>Healthcare</h3>
+        <p>Patient management AI, medical document processing, appointment scheduling bots, and diagnostic assistance.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏭</div>
+        <h3>Manufacturing</h3>
+        <p>Predictive maintenance, quality control vision systems, supply chain intelligence, and production optimization.</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-1">
+        <div class="industry-icon">📚</div>
+        <h3>Education</h3>
+        <p>AI tutoring systems, automated grading, learning management platforms, and student engagement analytics.</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-2">
+        <div class="industry-icon">🏡</div>
+        <h3>Real Estate</h3>
+        <p>AI property valuation, chatbot lead qualification, CRM automation, and virtual property tour experiences.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🚚</div>
+        <h3>Logistics &amp; Delivery</h3>
+        <p>Route optimization AI, delivery tracking bots, warehouse automation, and demand forecasting systems.</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-1">
+        <div class="industry-icon">🏛️</div>
+        <h3>Government</h3>
+        <p>Citizen service chatbots, document processing automation, public analytics dashboards, and digital governance tools.</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-2">
+        <div class="industry-icon">📣</div>
+        <h3>Marketing &amp; Media</h3>
+        <p>AI content generation, social media automation, performance analytics, and personalization engines.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏨</div>
+        <h3>Hospitality</h3>
+        <p>Booking automation, AI concierge chatbots, review management, and dynamic pricing intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section id="why-us">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Advantage</div>
+      <h2 class="section-title">Why Companies Choose Us</h2>
+      <p class="section-sub">We combine technical depth with business acumen to deliver AI solutions that create real, lasting competitive advantage.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-number">01</div>
+        <h3>🎯 AI-First Approach</h3>
+        <p>Every solution we build is designed with AI at its core — not bolted on as an afterthought. We think in agents, models, and intelligence layers from day one.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-number">02</div>
+        <h3>⚡ Rapid Delivery</h3>
+        <p>Our battle-tested component library and agile process lets us ship working MVPs in 2–4 weeks — not months. We move fast without sacrificing quality.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-number">03</div>
+        <h3>🌍 Southeast Asia Expertise</h3>
+        <p>We understand the unique needs of PH, BD, MY, ID, and SG markets — local platforms, languages, payment systems, and regulatory environments.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-number">04</div>
+        <h3>🔒 Enterprise Security</h3>
+        <p>SOC 2-aligned security practices, data encryption, role-based access, and compliance-ready architecture — protecting your business and your customers.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-number">05</div>
+        <h3>📈 ROI-Focused</h3>
+        <p>We measure success by the outcomes we generate for your business — leads, revenue, hours saved, and efficiency gains — not just lines of code delivered.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-number">06</div>
+        <h3>🤝 Long-Term Partnership</h3>
+        <p>We're not a vendor — we're a strategic technology partner. Post-launch support, ongoing optimization, and proactive innovation are standard with every engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process-bg" id="process">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">How We Work</div>
+      <h2 class="section-title">Our Development Process</h2>
+      <p class="section-sub">A proven, transparent process that minimizes risk and maximizes the value delivered at every stage.</p>
+    </div>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-circle">01</div>
+        <h3>Discovery</h3>
+        <p>Deep-dive into your business goals, pain points, and technical landscape</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle alt">02</div>
+        <h3>Strategy</h3>
+        <p>AI architecture design, technology selection, and roadmap planning</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">03</div>
+        <h3>Design</h3>
+        <p>UI/UX prototyping, data modeling, and system architecture finalization</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle alt">04</div>
+        <h3>Build</h3>
+        <p>Agile development sprints with weekly demos and continuous feedback loops</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">05</div>
+        <h3>Launch</h3>
+        <p>Rigorous QA, performance testing, and production deployment with zero downtime</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle alt">06</div>
+        <h3>Optimize</h3>
+        <p>Monitoring, iteration, and continuous improvement based on real-world data</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECH STACK ===== -->
+<section id="tech-stack">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Technology</div>
+      <h2 class="section-title">Our Technology Stack</h2>
+      <p class="section-sub">We use best-in-class tools and frameworks to build scalable, maintainable, and future-proof systems.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-item reveal"><div class="tech-logo">⚛️</div><div class="tech-name">React.js</div></div>
+      <div class="tech-item reveal reveal-delay-1"><div class="tech-logo">▲</div><div class="tech-name">Next.js</div></div>
+      <div class="tech-item reveal reveal-delay-2"><div class="tech-logo">🔷</div><div class="tech-name">TypeScript</div></div>
+      <div class="tech-item reveal"><div class="tech-logo">🐍</div><div class="tech-name">Python</div></div>
+      <div class="tech-item reveal reveal-delay-1"><div class="tech-logo">⚡</div><div class="tech-name">Node.js</div></div>
+      <div class="tech-item reveal reveal-delay-2"><div class="tech-logo">🤖</div><div class="tech-name">OpenAI</div></div>
+      <div class="tech-item reveal"><div class="tech-logo">🧠</div><div class="tech-name">Claude AI</div></div>
+      <div class="tech-item reveal reveal-delay-1"><div class="tech-logo">🔄</div><div class="tech-name">n8n</div></div>
+      <div class="tech-item reveal reveal-delay-2"><div class="tech-logo">⚙️</div><div class="tech-name">Make.com</div></div>
+      <div class="tech-item reveal"><div class="tech-logo">🟢</div><div class="tech-name">Shopify</div></div>
+      <div class="tech-item reveal reveal-delay-1"><div class="tech-logo">☁️</div><div class="tech-name">AWS</div></div>
+      <div class="tech-item reveal reveal-delay-2"><div class="tech-logo">🔥</div><div class="tech-name">Firebase</div></div>
+      <div class="tech-item reveal"><div class="tech-logo">🐘</div><div class="tech-name">PostgreSQL</div></div>
+      <div class="tech-item reveal reveal-delay-1"><div class="tech-logo">🟩</div><div class="tech-name">MongoDB</div></div>
+      <div class="tech-item reveal reveal-delay-2"><div class="tech-logo">🐳</div><div class="tech-name">Docker</div></div>
+      <div class="tech-item reveal"><div class="tech-logo">🎨</div><div class="tech-name">Tailwind CSS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO / CASE STUDIES ===== -->
+<section class="portfolio-bg" id="portfolio">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Case Studies</div>
+      <h2 class="section-title">Work We're Proud Of</h2>
+      <p class="section-sub">Real projects, real results. See how we've transformed businesses across industries with intelligent technology.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb grad-blue">
+          <span class="thumb-label">E-COM</span>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">E-Commerce AI</span>
+          <h3>Fashion Brand Multi-Platform Auto-Poster</h3>
+          <p>Built a fully automated AI social media system that generates Bangla + English captions and posts across Facebook, Instagram, and TikTok Shop — scheduled and hands-free.</p>
+          <div class="portfolio-metrics">
+            <div class="pm"><div class="pm-num">400%</div><div class="pm-label">Engagement↑</div></div>
+            <div class="pm"><div class="pm-num">20h</div><div class="pm-label">Saved/week</div></div>
+            <div class="pm"><div class="pm-num">3x</div><div class="pm-label">Revenue Growth</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-thumb grad-purple">
+          <span class="thumb-label">AI BOT</span>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">AI Chatbot</span>
+          <h3>Real Estate Lead Qualification AI</h3>
+          <p>Deployed a multilingual AI chatbot that qualifies real estate leads 24/7, books site visits automatically, and integrates with the client's CRM — increasing closings by 60%.</p>
+          <div class="portfolio-metrics">
+            <div class="pm"><div class="pm-num">60%</div><div class="pm-label">More Closings</div></div>
+            <div class="pm"><div class="pm-num">24/7</div><div class="pm-label">Lead Coverage</div></div>
+            <div class="pm"><div class="pm-num">95%</div><div class="pm-label">CSAT Score</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-thumb grad-cyan">
+          <span class="thumb-label">SAAS</span>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">SaaS Platform</span>
+          <h3>B2B Invoice Automation Platform</h3>
+          <p>End-to-end SaaS that automatically extracts invoice data with AI OCR, routes approvals, syncs with accounting software, and flags anomalies before payment.</p>
+          <div class="portfolio-metrics">
+            <div class="pm"><div class="pm-num">85%</div><div class="pm-label">Time Saved</div></div>
+            <div class="pm"><div class="pm-num">0</div><div class="pm-label">Manual Errors</div></div>
+            <div class="pm"><div class="pm-num">200+</div><div class="pm-label">Daily Invoices</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Client Stories</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-sub">Don't take our word for it — here's what business leaders say after working with Sarker NextGenAI.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>The AI automation system Sarker NextGenAI built for our e-commerce business saved us 30+ hours per week and tripled our posting consistency. The results speak for themselves — our engagement went through the roof.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:var(--gradient-primary);">RM</div>
+          <div>
+            <div class="author-name">Rashid M.</div>
+            <div class="author-title">CEO, Fashion E-Commerce Brand</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>We were skeptical about AI chatbots, but their implementation was seamless. Our AI assistant now handles 80% of customer queries without human involvement. Our team can finally focus on high-value work.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:var(--gradient-accent);">AL</div>
+          <div>
+            <div class="author-name">Anna L.</div>
+            <div class="author-title">Operations Manager, Logistics Startup</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>From discovery to launch in 6 weeks. The team delivered a complete SaaS platform that exceeded our expectations in every way — the UI, the AI features, and the performance. Outstanding work.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#7C3AED,#06B6D4);">JP</div>
+          <div>
+            <div class="author-name">Jonathan P.</div>
+            <div class="author-title">Founder, PropTech Startup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing-bg" id="pricing">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Investment</div>
+      <h2 class="section-title">Transparent Pricing</h2>
+      <p class="section-sub">Flexible plans designed for every stage of your business — from startups to enterprises. Custom projects quoted on scope.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price">$999</div>
+        <div class="pricing-period">starting price</div>
+        <div class="pricing-desc">Perfect for startups and small businesses taking their first step into AI and automation.</div>
+        <ul class="pricing-features">
+          <li>AI Chatbot (up to 3 flows)</li>
+          <li>Workflow Automation (up to 5 workflows)</li>
+          <li>Basic Website or Landing Page</li>
+          <li>API Integration (up to 3 services)</li>
+          <li>30-Day Post-Launch Support</li>
+          <li>Weekly Progress Reports</li>
+        </ul>
+        <a href="#contact" class="pricing-cta outline">Get Started →</a>
+      </div>
+      <div class="pricing-card featured reveal reveal-delay-1">
+        <div class="popular-badge">Most Popular</div>
+        <div class="pricing-name">Growth</div>
+        <div class="pricing-price">$3,999</div>
+        <div class="pricing-period">starting price</div>
+        <div class="pricing-desc">The complete AI + software package for businesses ready to scale with intelligent automation and custom development.</div>
+        <ul class="pricing-features">
+          <li>Advanced AI Agent (multi-step workflows)</li>
+          <li>Custom AI Chatbot with LLM fine-tuning</li>
+          <li>Full-Stack Web Application</li>
+          <li>Unlimited API Integrations</li>
+          <li>E-Commerce Platform Integration</li>
+          <li>Data Analytics Dashboard</li>
+          <li>90-Day Priority Support</li>
+          <li>Dedicated Project Manager</li>
+        </ul>
+        <a href="#contact" class="pricing-cta filled">Get Started →</a>
+      </div>
+      <div class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-period">tailored to your scope</div>
+        <div class="pricing-desc">For large organizations, government bodies, and enterprises needing bespoke AI systems at scale.</div>
+        <ul class="pricing-features">
+          <li>Full Custom AI Platform Development</li>
+          <li>Enterprise LLM Fine-Tuning</li>
+          <li>SaaS or ERP/CRM Development</li>
+          <li>Multi-Region Cloud Architecture</li>
+          <li>SOC 2 &amp; Compliance-Ready</li>
+          <li>Dedicated Engineering Team</li>
+          <li>24/7 SLA Support</li>
+          <li>Quarterly Business Reviews</li>
+        </ul>
+        <a href="#contact" class="pricing-cta outline">Contact Sales →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+      <p class="section-sub">Everything you need to know before starting your AI project with us.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does a typical AI project take? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>It depends on scope — a chatbot or simple automation can be live in 2–3 weeks. A full SaaS platform or custom AI solution typically takes 6–16 weeks. We provide detailed timelines in our discovery phase and always stick to them.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you work with clients outside the Philippines? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Absolutely. We work with clients globally — across Southeast Asia, the Middle East, Europe, North America, and beyond. Our team operates across multiple time zones to ensure smooth communication regardless of where you are.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">What AI models do you use? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>We're model-agnostic and work with GPT-4, Claude (Anthropic), Gemini, Llama, Mistral, and other open-source models depending on your use case, budget, and data privacy requirements. We always recommend the right model for your specific needs.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Is my data and IP secure with you? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Yes. We sign NDAs before any project begins. Your IP, data, and code belong entirely to you. We use encrypted communication, secure development environments, and follow security best practices aligned with SOC 2 principles throughout every project.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you provide post-launch support and maintenance? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Yes — all our projects include a post-launch support period (30–90 days depending on plan). We also offer ongoing retainer agreements for maintenance, optimization, and feature additions. Many clients continue working with us long after launch.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Can you integrate AI into my existing systems? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Absolutely. We specialize in integrating AI capabilities into existing platforms — whether it's your Shopify store, CRM, ERP, website, or custom software. We use APIs, webhooks, and middleware to connect everything seamlessly without disrupting your current operations.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">What is your payment structure? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>We typically use a milestone-based payment structure: 30% upfront to begin, 40% at mid-project milestone, and 30% upon delivery and acceptance. For enterprise projects, we can accommodate monthly billing or custom payment schedules based on your requirements.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section class="blog-bg" id="blog">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Insights</div>
+      <h2 class="section-title">AI Insights &amp; Strategies</h2>
+      <p class="section-sub">Practical guides, case studies, and thought leadership on AI, automation, and the future of business technology.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(37,99,235,0.3),rgba(124,58,237,0.2));">🤖</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag">AI Agents</span>
+            <span class="blog-date">Jul 28, 2025</span>
+          </div>
+          <h3>How AI Agents Are Replacing Entire Business Teams in 2025</h3>
+          <p>The shift from tools to autonomous agents is happening faster than anyone predicted. Here's what business owners need to know.</p>
+          <div class="blog-read">Read Article →</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(6,182,212,0.3),rgba(37,99,235,0.2));">⚡</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag">Automation</span>
+            <span class="blog-date">Jul 14, 2025</span>
+          </div>
+          <h3>n8n vs Make.com: Which Automation Platform Is Right for Your Business?</h3>
+          <p>A practical comparison based on 50+ real automation implementations — covering cost, flexibility, and enterprise readiness.</p>
+          <div class="blog-read">Read Article →</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(124,58,237,0.3),rgba(6,182,212,0.2));">📊</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-tag">E-Commerce</span>
+            <span class="blog-date">Jun 30, 2025</span>
+          </div>
+          <h3>AI-Powered Social Media: How We Generated ₱2M in Sales with Automated Content</h3>
+          <p>A real case study of how automated AI posting on Shopee, TikTok, and Facebook drove massive e-commerce growth.</p>
+          <div class="blog-read">Read Article →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAREERS ===== -->
+<section class="careers-bg" id="careers">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Join Us</div>
+      <h2 class="section-title">Build the Future With Us</h2>
+      <p class="section-sub">We're growing fast and looking for talented people who want to work on cutting-edge AI projects that matter.</p>
+    </div>
+    <div class="job-list">
+      <div class="job-card reveal">
+        <div class="job-info">
+          <h3>Senior AI Engineer</h3>
+          <div class="job-badges">
+            <span class="job-badge">Full-Time</span>
+            <span class="job-badge">Remote / Metro Manila</span>
+            <span class="job-badge">Python · LLMs · RAG</span>
+          </div>
+        </div>
+        <button class="job-apply">Apply Now →</button>
+      </div>
+      <div class="job-card reveal">
+        <div class="job-info">
+          <h3>Full-Stack Developer (React + Node.js)</h3>
+          <div class="job-badges">
+            <span class="job-badge">Full-Time</span>
+            <span class="job-badge">Hybrid</span>
+            <span class="job-badge">React · Next.js · TypeScript</span>
+          </div>
+        </div>
+        <button class="job-apply">Apply Now →</button>
+      </div>
+      <div class="job-card reveal">
+        <div class="job-info">
+          <h3>Automation Engineer (n8n / Make.com)</h3>
+          <div class="job-badges">
+            <span class="job-badge">Contract / Full-Time</span>
+            <span class="job-badge">Remote</span>
+            <span class="job-badge">n8n · API integrations</span>
+          </div>
+        </div>
+        <button class="job-apply">Apply Now →</button>
+      </div>
+      <div class="job-card reveal">
+        <div class="job-info">
+          <h3>UI/UX Designer</h3>
+          <div class="job-badges">
+            <span class="job-badge">Full-Time</span>
+            <span class="job-badge">Metro Manila / Remote</span>
+            <span class="job-badge">Figma · Design Systems</span>
+          </div>
+        </div>
+        <button class="job-apply">Apply Now →</button>
+      </div>
+      <div class="job-card reveal">
+        <div class="job-info">
+          <h3>Digital Marketing Manager (AI-Assisted)</h3>
+          <div class="job-badges">
+            <span class="job-badge">Full-Time</span>
+            <span class="job-badge">Paranaque, Metro Manila</span>
+            <span class="job-badge">Meta Ads · SEO · Analytics</span>
+          </div>
+        </div>
+        <button class="job-apply">Apply Now →</button>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <p style="font-size:15px;color:var(--text-muted);margin-bottom:16px;">Don't see the right role? We're always looking for exceptional people.</p>
+      <a href="#contact" class="btn-secondary" style="display:inline-flex;">Send Open Application →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT CTA ===== -->
+<section class="cta-section">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <div class="section-label" style="justify-content:center;">Ready to Start?</div>
+      <h2>Let's Build Something<br/><span style="background:var(--gradient-full);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Extraordinary</span></h2>
+      <p>Book a free 30-minute strategy call and discover how AI can transform your business in 90 days or less.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="#contact" class="btn-primary">Book Free Strategy Call →</a>
+        <a href="https://wa.me/1234567890" class="btn-secondary">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-sub">Ready to start your AI journey? Tell us about your project and we'll get back to you within 24 hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Office Location</h4>
+            <p>Metro Manila, Philippines<br/>Serving clients globally</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Email Us</h4>
+            <p>hello@sarkernextgenai.com<br/>projects@sarkernextgenai.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Call or WhatsApp</h4>
+            <p>+63 XXX XXX XXXX<br/>Mon–Sat, 9AM–7PM PHT</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏱️</div>
+          <div>
+            <h4>Response Time</h4>
+            <p>Within 24 hours on weekdays<br/>Free consultation available</p>
+          </div>
+        </div>
+        <div class="newsletter">
+          <h4>Subscribe to AI Insights</h4>
+          <p>Weekly tips on AI, automation, and digital growth.</p>
+          <div class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="your@email.com" />
+            <button class="newsletter-btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-card reveal reveal-delay-1">
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:28px;">Start Your Project</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" class="form-input" placeholder="John" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" class="form-input" placeholder="Doe" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" class="form-input" placeholder="john@company.com" required />
+        </div>
+        <div class="form-group">
+          <label>Company / Organization</label>
+          <input type="text" class="form-input" placeholder="Acme Inc." />
+        </div>
+        <div class="form-group">
+          <label>Service Interested In *</label>
+          <select class="form-select" required>
+            <option value="" disabled selected>Select a service</option>
+            <option>AI Agents</option>
+            <option>AI Chatbot</option>
+            <option>Custom AI Development</option>
+            <option>Website Development</option>
+            <option>Mobile App Development</option>
+            <option>SaaS Development</option>
+            <option>Workflow Automation</option>
+            <option>E-Commerce Integration</option>
+            <option>Data Analytics</option>
+            <option>Other / Multiple</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estimated Budget</label>
+          <select class="form-select">
+            <option value="" disabled selected>Select budget range</option>
+            <option>Under $1,000</option>
+            <option>$1,000 – $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000 – $50,000</option>
+            <option>$50,000+</option>
+            <option>Let's discuss</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell Us About Your Project *</label>
+          <textarea class="form-textarea" placeholder="Describe your project, goals, and any specific requirements..." required></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(event)">Send Message &amp; Get Free Consultation →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Sarker NextGenAI Technology Inc.</div>
+        <p class="footer-desc">Building intelligent solutions that empower businesses to move faster, scale smarter, and compete at the highest level — powered by AI.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">AI Agents</a></li>
+          <li><a href="#services">AI Chatbots</a></li>
+          <li><a href="#services">Custom AI Dev</a></li>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Mobile Apps</a></li>
+          <li><a href="#services">SaaS Development</a></li>
+          <li><a href="#services">Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul class="footer-links">
+          <li><a href="#industries">E-Commerce</a></li>
+          <li><a href="#industries">Finance</a></li>
+          <li><a href="#industries">Healthcare</a></li>
+          <li><a href="#industries">Real Estate</a></li>
+          <li><a href="#industries">Logistics</a></li>
+          <li><a href="#industries">Government</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#privacy">Cookie Policy</a></li>
+          <li><a href="#contact">Refund Policy</a></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">Headquarters</div>
+          <div style="font-size:13px;color:var(--text-secondary);">Metro Manila, Philippines</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Sarker NextGenAI Technology Inc. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#privacy" id="privacy">Privacy</a>
+        <a href="#terms" id="terms">Terms</a>
+        <a href="#contact">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== LOADER =====
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 1600);
+});
+
+// ===== NAV SCROLL =====
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+  document.getElementById('back-top').classList.toggle('visible', window.scrollY > 400);
+});
+
+// ===== MOBILE MENU =====
+document.getElementById('mobile-toggle').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.toggle('open');
+});
+function closeMobile() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+// ===== SCROLL REVEAL =====
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ===== COUNTER ANIMATION =====
+function animateCount(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.closest('.hero-stat').querySelector('.label').textContent.includes('%') ? '+' : '+';
+  let count = 0;
+  const inc = target / 60;
+  const timer = setInterval(() => {
+    count = Math.min(count + inc, target);
+    el.textContent = Math.floor(count) + (target < 10 ? '' : '');
+    if (count >= target) {
+      el.textContent = target + (el.closest('.hero-stat').querySelector('.label').textContent.includes('%') ? '' : '+');
+      clearInterval(timer);
+    }
+  }, 20);
+}
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCount(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+// ===== FAQ =====
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const ans = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-a').classList.remove('open');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    ans.classList.add('open');
+  }
+}
+
+// ===== PARTICLE CANVAS =====
+(function() {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: Math.random() * 1200, y: Math.random() * 700,
+      r: Math.random() * 1.5 + 0.3,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      o: Math.random() * 0.4 + 0.1
+    });
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(37,99,235,${p.o})`;
+      ctx.fill();
+    });
+    // draw connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        if (dist < 100) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(37,99,235,${0.06 * (1 - dist/100)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ===== DEMO CHAT =====
+const demoReplies = [
+  "Great question! I can help you set that up using n8n or Make.com. Typically this takes 2–3 hours to configure. Want a demo?",
+  "Absolutely! Based on your requirements, I'd recommend starting with a simple chatbot flow first, then expanding to a full AI agent. Here's a quick roadmap...",
+  "That's a common challenge! AI automation can reduce that workload by 70–85%. Let me outline the solution architecture for your use case.",
+  "I've analyzed similar cases. The best approach would be a hybrid AI system combining LLM intelligence with rule-based guardrails. Shall I elaborate?",
+  "Excellent! Sarker NextGenAI has built this exact type of system for multiple clients. Our average delivery time is 3–4 weeks. Ready to get started?"
+];
+let demoIdx = 0;
+function sendDemoMsg() {
+  const input = document.getElementById('demo-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+  const display = document.getElementById('chat-display');
+  display.innerHTML += `<div class="chat-msg user">${msg}</div>`;
+  input.value = '';
+  setTimeout(() => {
+    display.innerHTML += `<div class="chat-msg bot">${demoReplies[demoIdx % demoReplies.length]}</div>`;
+    demoIdx++;
+    display.scrollTop = display.scrollHeight;
+  }, 800);
+  display.scrollTop = display.scrollHeight;
+}
+document.getElementById('demo-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') sendDemoMsg();
+});
+
+// ===== FORM SUBMIT =====
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target;
+  btn.textContent = '✓ Message Sent! We\'ll reply within 24 hours.';
+  btn.style.background = 'linear-gradient(135deg,#059669,#10B981)';
+  setTimeout(() => {
+    btn.textContent = 'Send Message & Get Free Consultation →';
+    btn.style.background = '';
+  }, 4000);
+}
+</script>
+
+</body>
+</html>
